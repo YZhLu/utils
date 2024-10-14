@@ -1,0 +1,24 @@
+{
+  "name": "@aulazero/utils",
+  "version": "0.0.0",
+  "description": "Utils used by AulaZero Kingdom.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "release": "npm run build && changeset publish",
+    "lint": "tsc"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "mathjs": "^13.2.0"
+  }
+}
