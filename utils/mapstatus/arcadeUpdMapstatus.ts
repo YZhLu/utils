@@ -77,7 +77,7 @@ export const getIncrements = (
 	Object.keys(chain).forEach((k) => {
 		if (!increments[`${k}`]) increments[`${k}`] = 0;
 
-		increments[`${k}`] = increments[`${k}`] + increment(grade, size, decay, samples, chain[k]);
+		increments[`${k}`] = increments[`${k}`]! + increment(grade, size, decay, samples, chain[k]!);
 		//console.log("increments[`${k}`] -- ", increments[`${k}`])
 	});
 
@@ -107,7 +107,7 @@ export const updStatus = (
 		const m = { ..._m };
 		if (m.value != undefined) {
 			//console.log("nStatus = ",nStatus)
-			m.value = updValue(m.value, increments[m.mapNode.node.data.id]);
+			m.value = updValue(m.value, increments[m.mapNode.node.data.id]!);
 		}
 		return m;
 	});

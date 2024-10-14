@@ -1,3 +1,6 @@
+//@ts-nocheck
+
+
 // JavaScript program to find the longest
 // path in the DAG
 
@@ -6,6 +9,7 @@
 // Function to traverse the DAG
 // and apply Dynamic Programming
 // to find the longest path
+
 export function dfs(
 	node: string,
 	adj: { [key: string]: string[] },

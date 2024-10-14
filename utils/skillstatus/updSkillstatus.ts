@@ -88,7 +88,7 @@ export const getIncrementsFromTaskanswer = (
 		Object.keys(chain).forEach((k) => {
 			if (!increments[`${k}`]) increments[`${k}`] = 0;
 
-			increments[`${k}`] = increments[`${k}`] + increment(s, maxS, decay, samples, chain[k]);
+			increments[`${k}`] = increments[`${k}`]! + increment(s, maxS, decay, samples, chain[k]!);
 			//console.log("increments[`${k}`] -- ", increments[`${k}`])
 		});
 	});
@@ -141,7 +141,7 @@ export const updStatusFromTaskanswer = (
 	const newStatus = skillstatus.nodes.map((n) => {
 		const nStatus = n.status;
 		//console.log("nStatus = ",nStatus)
-		nStatus.value = updValue(n.status.value, increments[n.node.data.id]);
+		nStatus.value = updValue(n.status.value, increments[n.node.data.id]!);
 		return nStatus;
 	});
 
