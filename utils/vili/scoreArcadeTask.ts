@@ -1,6 +1,6 @@
 import type { Alternative } from '../../types/Alternative';
 
-type ArcadeAnswer = {
+export type ArcadeAnswer = {
 	taskId: string;
 	selectedAlternative: string;
 	alternative: Alternative;
