@@ -1,5 +1,11 @@
 # @aulazero/utils
 
+## 0.1.0
+
+### Minor Changes
+
+- 0f695a0: Update arcadeUpdMapstatus increase calc
+
 ## 0.0.1
 
 ### Patch Changes
