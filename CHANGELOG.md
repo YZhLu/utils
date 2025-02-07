@@ -1,5 +1,11 @@
 # @aulazero/utils
 
+## 0.2.1
+
+### Patch Changes
+
+- b14c6ec: bug fix
+
 ## 0.2.0
 
 ### Minor Changes
