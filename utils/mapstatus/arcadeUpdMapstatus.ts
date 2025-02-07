@@ -42,7 +42,7 @@ export function getChain(
             );
             //console.log("node = ", _node)
             //console.log("cond - ", _node?.deep && _node.deep === deep)
-            if (_node?.mapNode.deep && _node.mapNode.deep === deep) {
+            if (_node?.mapNode.deep === deep) {
               chain[_node.mapNode.node.data.id] = firstNode?.mapNode.deep
                 ? firstNode.mapNode.deep - deep
                 : deep;
@@ -66,9 +66,10 @@ export function getMapNodesChain(
   return chain;
 }
 
-export function updValue(value: number, increment: number) {
-  // console.log(value);
-  const _newValue = increment > value ? increment: value + increment;
+export function updValue(size:number, samples:number, value: number, increment: number) {
+  //console.log(value);
+  //const _newValue = increment > value ? increment: value + increment;
+  const _newValue = size >= samples ? increment : value + increment;
   //console.log('updValue -->', value, increment, _newValue);
   const newValue = _newValue < 0 ? 0 : _newValue > 1 ? 1 : _newValue;
   return increment ? newValue : value;
@@ -128,7 +129,7 @@ export const updStatus = (
     const m = { ..._m };
     if (m.value != undefined) {
       //console.log("nStatus = ",nStatus)
-      m.value = updValue(m.value, increments[m.mapNode.node.data.id]!);
+      m.value = updValue(size, samples, m.value, increments[m.mapNode.node.data.id]!);
     }
     return m;
   });
