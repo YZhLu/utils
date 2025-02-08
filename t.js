@@ -1,8 +1,20 @@
 function increment(grade, size, decay, nSamples, distance) {
-  const inc =
-    size <= nSamples
-      ? size * grade * ((1 - decay) ** distance / nSamples)
-      : grade * (1 - decay) ** distance;
+  let inc;
+
+  if (size <= nSamples) {
+    inc = size * grade * ((1 - decay) ** distance / nSamples)
+  } else {
+    if (distance == 0) {
+      inc = grade;
+    } else {
+      inc = grade * (1 + decay) ** distance;
+    }
+  }
+
+  // inc =
+  //   size <= nSamples
+  //     ? size * grade * ((1 - decay) ** distance / nSamples)
+  //     : grade * (1 - decay) ** distance;
   return inc;
 }
 
@@ -26,13 +38,13 @@ function getChain(skillId, mapStatus) {
             const _node = mapStatus.find(
               (_mStat) => _mStat.mapNode.node.id === n
             );
-            console.log("_node",_node, _node.mapNode.deep === deep);
+            console.log("_node", _node, _node.mapNode.deep === deep);
             if (_node?.mapNode.deep === deep) {
-              console.log("_node",_node, _node.mapNode.deep === deep);
+              console.log("_node", _node, _node.mapNode.deep === deep);
               chain[_node.mapNode.node.data.id] = firstNode?.mapNode.deep
                 ? firstNode.mapNode.deep - deep
                 : deep;
-              console.log('aui', _node.mapNode.node.data.id,firstNode?.mapNode.deep)
+              console.log('aui', _node.mapNode.node.data.id, firstNode?.mapNode.deep)
             }
           });
       });
@@ -533,7 +545,7 @@ const _ms = [
     "id": "709329b8-67c1-4c16-85b4-fa2710643b17"
   },
   {
-    "value": 0.95,
+    "value": 0.6,
     "mapNode": {
       "id": "d436a268-163c-47ad-b974-3bd448ed4bdb",
       "x": 825,
@@ -603,7 +615,7 @@ const _ms = [
     "id": "a0751144-0429-43d0-a69a-9230e070dd27"
   },
   {
-    "value": 0.6,
+    "value": 0.4,
     "mapNode": {
       "id": "4f5f1cb6-ea61-4986-ac47-548be7e68b7d",
       "x": 825,
@@ -647,5 +659,5 @@ let i = increment(0.5, 4, 0.5, 2, 0);
 let value = updValue(10, 20, 0, i);
 console.log(i, "value -- ", value)
 
-const res = updStatus(0.5, 4, 0.5, 2, _ms, skid)
-console.log(res)
+const res = updStatus(0.7, 4, 0.5, 2, _ms, skid)
+console.log(res.map(r => [r.id, r.value]))

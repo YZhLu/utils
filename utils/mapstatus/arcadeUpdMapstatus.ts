@@ -7,10 +7,21 @@ export function increment(
   nSamples: number,
   distance: number
 ) {
-  const inc =
-    size <= nSamples
-      ? size * grade * ((1 - decay) ** distance / nSamples)
-      : grade * (1 - decay) ** distance;
+  let inc;
+
+  if (size <= nSamples) {
+    inc = size * grade * ((1 - decay) ** distance / nSamples);
+  } else {
+    if (distance == 0) {
+      inc = grade;
+    } else {
+      inc = grade * (1 + decay) ** distance;
+    }
+  }
+  // const inc =
+  //   size <= nSamples
+  //     ? size * grade * ((1 - decay) ** distance / nSamples)
+  //     : grade * (1 - decay) ** distance;
   return inc;
 }
 
@@ -66,7 +77,12 @@ export function getMapNodesChain(
   return chain;
 }
 
-export function updValue(size:number, samples:number, value: number, increment: number) {
+export function updValue(
+  size: number,
+  samples: number,
+  value: number,
+  increment: number
+) {
   //console.log(value);
   //const _newValue = increment > value ? increment: value + increment;
   const _newValue = size >= samples ? increment : value + increment;
@@ -129,7 +145,12 @@ export const updStatus = (
     const m = { ..._m };
     if (m.value != undefined) {
       //console.log("nStatus = ",nStatus)
-      m.value = updValue(size, samples, m.value, increments[m.mapNode.node.data.id]!);
+      m.value = updValue(
+        size,
+        samples,
+        m.value,
+        increments[m.mapNode.node.data.id]!
+      );
     }
     return m;
   });
