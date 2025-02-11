@@ -7,7 +7,7 @@ export type TrainingSession = {
     startedAt: Date;
     endedAt: Date;
     duration: number; // Em segundos
-    score: number;
+    grade: number;
     hits: number;
     misses: number;
     volume: number; // Tasks quantity
