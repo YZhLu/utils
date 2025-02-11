@@ -1,5 +1,11 @@
 # @aulazero/utils
 
+## 0.4.1
+
+### Patch Changes
+
+- 005b624: rename_grade_to_score_in_training_session
+
 ## 0.4.0
 
 ### Minor Changes
