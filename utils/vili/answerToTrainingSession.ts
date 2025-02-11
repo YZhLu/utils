@@ -1,10 +1,4 @@
-import type { Alternative } from "../../types/Alternative";
-
-export type ArcadeAnswer = {
-  taskId: string;
-  selectedAlternative: string;
-  alternative: Alternative;
-};
+import { ArcadeAnswer } from "./scoreArcadeTask";
 
 export function answerToTrainingSession(answer: ArcadeAnswer[]) {
   console.log("answer scoreArcade", answer);
