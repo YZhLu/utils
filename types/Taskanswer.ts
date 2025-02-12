@@ -7,7 +7,7 @@ export type Taskanswer = {
 	id: string;
 	taskId: string;
 	studentId: string;
-	feedback: string;
+	feedback?: string;
 	task?: Task;
 	timeSegments?: TimeSegment[];
 	classroomId: string;
