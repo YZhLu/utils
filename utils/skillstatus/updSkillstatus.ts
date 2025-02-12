@@ -50,7 +50,7 @@ export const getScore = (score: number, alternative: Alternative) =>
 
 export function getScoreFromTaskanswer(taskanswer: Taskanswer, task: Task) {
 	const alternativesAns = task.alternatives.filter((a: Alternative) =>
-		taskanswer.alternativeAnswers.includes(a.statement)
+		taskanswer.alternativeAnswersIds.includes(a.statement)
 	);
 	const score: number = alternativesAns.reduce(getScore, 0);
 	return score;
