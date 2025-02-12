@@ -3,7 +3,7 @@ import { TimeSegment } from './TimeSegment';
 
 export type Taskanswer = {
 	essayAnswer: string;
-	alternativeAnswers: string[];
+	alternativeAnswersIds: string[];
 	id: string;
 	taskId: string;
 	studentId: string;
