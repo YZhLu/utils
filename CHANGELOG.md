@@ -1,5 +1,11 @@
 # @aulazero/utils
 
+## 0.4.4
+
+### Patch Changes
+
+- 70cb87f: bug fix
+
 ## 0.4.3
 
 ### Patch Changes
