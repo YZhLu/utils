@@ -1,5 +1,11 @@
 # @aulazero/utils
 
+## 0.5.0
+
+### Minor Changes
+
+- b9a6ee7: Add ArcadeData
+
 ## 0.4.5
 
 ### Patch Changes
