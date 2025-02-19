@@ -20,7 +20,7 @@ export * from "./types/Skillspace";
 export * from "./types/Task";
 export * from "./types/Token";
 export * from "./types/index";
-export * from "./types/Classrooms";
+export * from "./types/Classroom";
 export * from "./types/Mapstatus";
 export * from "./types/RefreshToken";
 export * from "./types/Skillmap";

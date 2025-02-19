@@ -1,4 +1,4 @@
-import { Classroom } from "./Classrooms";
+import { Classroom } from "./Classroom";
 import { Student } from "./Student";
 import { Task } from "./Task";
 

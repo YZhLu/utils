@@ -1,3 +1,4 @@
+import { ArcadeData } from './ArcadeData';
 import type { Skillmap } from './Skillmap';
 import type { Skilltree } from './Skilltree';
 
@@ -15,4 +16,5 @@ export type Classroom = {
 		id: string;
 		userId: string;
 	}[];
+	arcadeData: ArcadeData
 };
