@@ -1,5 +1,11 @@
 # @aulazero/utils
 
+## 0.5.2
+
+### Patch Changes
+
+- 808a8a2: fix Profile
+
 ## 0.5.1
 
 ### Patch Changes
