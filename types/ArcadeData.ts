@@ -5,6 +5,6 @@ export interface ArcadeData {
   skills: string;
   template: number[];
   shifts: number[];
-  classroom: Classroom;
+  classroom?: Classroom;
   classroomId: string;
 }
