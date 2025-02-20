@@ -1,5 +1,11 @@
 # @aulazero/utils
 
+## 0.5.1
+
+### Patch Changes
+
+- 0dcca5c: update ArcadeData
+
 ## 0.5.0
 
 ### Minor Changes
